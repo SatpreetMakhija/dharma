@@ -4,36 +4,45 @@ body, html {
     margin: 0;
 }
 
-.container {
+.mycontainer {
     width: 100%;
     height: 100%;
 }
 
-.top-pane {
+#top-pane {
     width: 100%;
     height: 50px;
-    background-color: #4da6ff;
+    background-color: #a9d6e5;
 }
 
 .left-pane {
     width: 20%;
-    height: 90%;
+    height: 100%;
     float: left;
-    background-color: royalblue;
+    background-color: #fdffb6;
 }
 
 .right-pane {
     width: 80%;
-    height: 90%;
+    height: 100%;
     float: right;
     position: relative;
-    background-color: red;
+    background-color:#b7e4c7;
 }
 
 .bottom-pane {
     width: 100%;
-    height: 10%;
-    background-color: salmon;
+    height: 3%;
+    background-color: rgb(222, 218, 246);
     bottom: 0;
     position: fixed;
+}
+
+
+.task-element {
+    display: flex;
+    background-color: white;
+    width: 60%;
+    height: 10%;
+    font-size: x-small;
 }

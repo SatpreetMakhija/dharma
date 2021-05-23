@@ -1,0 +1,2 @@
+import {removeAllChildNodes} from './helperFunctions';
+
