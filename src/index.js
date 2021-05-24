@@ -1,5 +1,5 @@
 import {createTask, addTask, addProjectToDOM, createProject, addTaskTabToDOM} from './addTask'
-import {Inbox} from './data'
+import {Data} from './data'
 addTaskTabToDOM()
 
 // var inbox = createProject("Inbox")
@@ -7,4 +7,5 @@ addTaskTabToDOM()
 // console.log(task)
 // addTask(inbox, task)
 // console.log(inbox)
-addProjectToDOM(Inbox)
+console.log(Data)
+addProjectToDOM(Data["Inbox"])
