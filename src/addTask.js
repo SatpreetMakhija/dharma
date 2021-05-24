@@ -1,4 +1,5 @@
-// inbox = []
+import {removeAllChildNodes} from './helperFunctions'
+import {Inbox} from './data'
 function createProject(name){
     var array = [];
     array.name = name;
@@ -70,12 +71,39 @@ function addProjectToDOM(projectName) {
 
 }
 
+
+function addTaskEventHandler(event) {
+    
+    event.preventDefault()
+    //create task
+    var taskTitle = this.children[0].value
+    var taskDate = this.children[0].value
+    var description = "not set YET"
+    var task = createTask(taskTitle, description, taskDate)
+    
+    
+    //add task to appropriate Project
+    // var projectName = document.querySelector("#project-heading").textContent;
+
+    addTask(Inbox, task);
+
+    //render task lists again
+    var rightPane = document.querySelector(".right-pane")
+    removeAllChildNodes(rightPane)
+    addTaskTabToDOM()
+    addProjectToDOM(Inbox)
+    
+}
+
+
 function addTaskTabToDOM() {
     var rightPane = document.querySelector(".right-pane")
 
     var addTaskForm = document.createElement("form")
     addTaskForm.setAttribute("class", "add-task-form")
     
+
+
     //add taskTitle input
     var taskTitle = document.createElement("input")
     taskTitle.setAttribute("type", "text")
@@ -95,6 +123,7 @@ function addTaskTabToDOM() {
     submitButton.setAttribute("value", "Submit")
     addTaskForm.appendChild(submitButton)
 
+    addTaskForm.addEventListener('submit', addTaskEventHandler);
     rightPane.appendChild(addTaskForm)
 }
 
